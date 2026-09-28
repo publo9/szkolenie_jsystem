@@ -16,4 +16,4 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Show the triggering event
-        run: echo "jestem ciekaw co wyzwolilo trigger" ${{ github.event_name }}"
+        run: echo "jestem ciekaw co wyzwolilo trigger ${{ github.event_name }}"
