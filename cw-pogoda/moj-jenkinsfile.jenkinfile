@@ -1,0 +1,21 @@
+pipeline {
+    agent any
+    stages {
+        stage('Git checkout') {
+            steps{
+                git branch: 'main', url: 'https://accountszkoleniacloud@bitbucket.org/szkoleniacloud/cw-pogoda.git'
+            }
+        }
+        stage('Skrypt pogoda') {
+            steps{
+            script {
+                withCredentials([string(credentialsId: 'API_WETHER', variable: 'API')]) {
+                    sh'''
+                bash ./start.sh "Szczecin" "${API}"
+                '''
+                }      
+            }
+            }
+        }
+    }
+}
