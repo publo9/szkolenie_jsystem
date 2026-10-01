@@ -148,3 +148,6 @@ Otwórz `.terraform.lock.hcl` i znajdź wersję wybraną dla każdego providera.
 - `terraform.tfstate` i kopie stanu powstają przy pracy Terraform; nie zastępuj ich przykładami. Plan `terraform.tfplan` jest wynikiem `plan -out`.
 
 [Treść zadania i pytania](README.md) · [Spis ćwiczeń](../README.md) · [Następny etap krok po kroku](../02_pierwszy_zasob/STEPS.md)
+
+
+CO SIE ZDARZY ?
