@@ -1,3 +1,5 @@
+
+
 variable "name_prefix" {
   description = "Wspólny prefiks nazw zasobów; losowy sufiks zostanie dodany automatycznie."
   type        = string
@@ -10,4 +12,14 @@ variable "name_prefix" {
   }
 }
 
+variable "project_environment" {
+  description = "Środowisko projektu DigitalOcean."
+  type        = string
+  default     = "Development"
+  nullable    = false
 
+  validation {
+    condition     = contains(["Development", "Staging", "Production"], var.project_environment)
+    error_message = "Dozwolone środowiska: Development, Staging, Production."
+  }
+}
